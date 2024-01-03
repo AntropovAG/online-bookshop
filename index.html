@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Bookshop</title>
+</head>
+<body class="page">
+    <header class="header">
+        <div class="container">
+            <h1 class="header__logo">Bookshop</h1>
+            <nav>
+                <ul class="header__navigation">
+                    <li><a class="header__link header__link_state_selected" href="#">Books</a></li>
+                    <li><a class="header__link" href="#">Audiobooks</a></li>
+                    <li><a class="header__link" href="#">Stationery & gifts</a></li>
+                    <li><a class="header__link" href="#">blog</a></li>
+                </ul>
+            </nav>
+            <div class="header__user-panel">
+                <button class="header__button header__user-profile"></button>
+                <button class="header__button header__search"></button>
+                <button class="header__button header__cart"></button>
+                <p class="header__items-count">3</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="banner">
+            <img class="banner__image" src="#" alt="#">
+            <div class="banner__buttons-container">
+                <button class="banner__radio-button banner__radio-button_type_selected"></button>
+                <button class="banner__radio-button"></button>
+                <button class="banner__radio-button"></button>
+            </div>
+            <a href="#"><img src="./src/images/promo_01.png" alt="" class="promo-image promo-image_position_top"></a>
+            <a href="#"><img src="./src/images/promo_02.png" alt="" class="promo-image promo-image_position_left"></a>
+        </section>
+        <section class="books">
+            <ul class="books__menu">
+                <li class="books__menu-item books__menu-item_type_selected"><a href="#">Architecture</a></li>
+                <li class="books__menu-item"><a href="#">Art & Fashion</a></li>
+                <li class="books__menu-item"><a href="#">Biography</a></li>
+                <li class="books__menu-item"><a href="#">Business</a></li>
+                <li class="books__menu-item"><a href="#">Crafts & Hobbies</a></li>
+                <li class="books__menu-item"><a href="#">Drama</a></li>
+                <li class="books__menu-item"><a href="#">Fiction</a></li>
+                <li class="books__menu-item"><a href="#">Food & Drink</a></li>
+                <li class="books__menu-item"><a href="#">Health & Wellbeing</a></li>
+                <li class="books__menu-item"><a href="#">History & Politics</a></li>
+                <li class="books__menu-item"><a href="#">Humor</a></li>
+                <li class="books__menu-item"><a href="#">Poetry</a></li>
+                <li class="books__menu-item"><a href="#">Psychology</a></li>
+                <li class="books__menu-item"><a href="#">Science</a></li>
+                <li class="books__menu-item"><a href="#">Technology</a></li>
+                <li class="books__menu-item"><a href="#">Travel & Maps</a></li>
+            </ul>
+            <div class="books__cards">
+                <div class="book__card">
+                    <img class="book__img" src="./src/images/book_default.png" alt="book">
+                    <div class="book__info-container">
+                        <p class="book__author">Author name</p>
+                        <h2 class="book__name">Book name</h2>
+                        <div class="book__review-container">
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <p class="book__review-count">100 reviews</p>
+                        </div>
+                        <p class="book__description">This book is about the book reading and enjoyment This book is about the book reading and enjoyment This book is about the book reading and enjoyment</p>
+                        <p class="book__price">$1.99</p>
+                        <button class="book__buy-button" type="button">buy now</button>
+                    </div>
+                </div>
+                <div class="book__card">
+                    <img class="book__img" src="./src/images/book_default.png" alt="book">
+                    <div class="book__info-container">
+                        <p class="book__author">Author name</p>
+                        <h2 class="book__name">Book name</h2>
+                        <div class="book__review-container">
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <p class="book__review-count">100 reviews</p>
+                        </div>
+                        <p class="book__description">This book is about the book reading and enjoyment This book is about the book reading and enjoyment This book is about the book reading and enjoyment</p>
+                        <p class="book__price">$1.99</p>
+                        <button class="book__buy-button" type="button">buy now</button>
+                    </div>
+                </div>
+                <div class="book__card">
+                    <img class="book__img" src="./src/images/book_default.png" alt="book">
+                    <div class="book__info-container">
+                        <p class="book__author">Author name</p>
+                        <h2 class="book__name">Book name</h2>
+                        <div class="book__review-container">
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <p class="book__review-count">100 reviews</p>
+                        </div>
+                        <p class="book__description">This book is about the book reading and enjoyment This book is about the book reading and enjoyment This book is about the book reading and enjoyment</p>
+                        <p class="book__price">$1.99</p>
+                        <button class="book__buy-button" type="button">buy now</button>
+                    </div>
+                </div>
+                <div class="book__card">
+                    <img class="book__img" src="./src/images/book_default.png" alt="book">
+                    <div class="book__info-container">
+                        <p class="book__author">Author name</p>
+                        <h2 class="book__name">Book name</h2>
+                        <div class="book__review-container">
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <p class="book__review-count">100 reviews</p>
+                        </div>
+                        <p class="book__description">This book is about the book reading and enjoyment This book is about the book reading and enjoyment This book is about the book reading and enjoyment</p>
+                        <p class="book__price">$1.99</p>
+                        <button class="book__buy-button" type="button">buy now</button>
+                    </div>
+                </div>
+                <div class="book__card">
+                    <img class="book__img" src="./src/images/book_default.png" alt="book">
+                    <div class="book__info-container">
+                        <p class="book__author">Author name</p>
+                        <h2 class="book__name">Book name</h2>
+                        <div class="book__review-container">
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <p class="book__review-count">100 reviews</p>
+                        </div>
+                        <p class="book__description">This book is about the book reading and enjoyment This book is about the book reading and enjoyment This book is about the book reading and enjoyment</p>
+                        <p class="book__price">$1.99</p>
+                        <button class="book__buy-button" type="button">buy now</button>
+                    </div>
+                </div>
+                <div class="book__card">
+                    <img class="book__img" src="./src/images/book_default.png" alt="book">
+                    <div class="book__info-container">
+                        <p class="book__author">Author name</p>
+                        <h2 class="book__name">Book name</h2>
+                        <div class="book__review-container">
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <svg class="book__review-star" xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                                <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+                            </svg>
+                            <p class="book__review-count">100 reviews</p>
+                        </div>
+                        <p class="book__description">This book is about the book reading and enjoyment This book is about the book reading and enjoyment This book is about the book reading and enjoyment</p>
+                        <p class="book__price">$1.99</p>
+                        <button class="book__buy-button" type="button">buy now</button>
+                    </div>
+                </div>
+                <button class="book__more-button" type="button">load more</button>
+            </div>
+        </section>
+    </main>
+    <script src="./index.js"></script>
+</body>
+</html>
