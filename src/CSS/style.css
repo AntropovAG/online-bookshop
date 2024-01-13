@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 5;
 }
 
-.container {
+.header__container {
     display: flex;
     width: 1120px;
     margin: 0 auto;
@@ -167,6 +167,8 @@ h1, h2, h3, h4, h5, h6 {
     right: -75px;
 }
 
+
+
 .promo-image_position_left {
     width: 137px;
     height: 273px;
@@ -226,6 +228,7 @@ h1, h2, h3, h4, h5, h6 {
 .books__menu-button:hover {
     cursor: pointer;
 }
+
 .books__menu-item_type_selected {
     color: #1C2A39;
     font-size: 16px;
@@ -360,4 +363,217 @@ h1, h2, h3, h4, h5, h6 {
 
 .book__more-button:hover {
     cursor: pointer;
+}
+
+
+
+@media  screen and (max-width: 1437px) {
+    .promo-image_position_top {
+        right: 200px;
+    }
+
+    .promo-image_position_left {
+        right: 100px;
+    }
+}
+
+@media  screen and (max-width: 1330px) {
+    .books__menu {
+        width: 1120px;
+        height: fit-content;
+        margin: 0 auto;
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(8, 125px);
+        grid-template-rows: repeat(2, 40px);
+        justify-content: space-between;
+        align-items: center;
+        justify-items: center;
+        gap: 15px;
+        margin-bottom: 50px;
+    }
+
+    .books__menu-item {
+        margin-left: 0;
+    }
+
+    .books__menu-item_type_selected::before {
+        content: "";
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
+    .books__cards {
+        width: 1120px;
+        justify-content: center;
+        display: grid;
+    }
+
+    .book__more-button {
+        margin: 96px auto;
+    }
+}
+
+@media  screen and (max-width: 1150px) {
+    .header__container {
+        width: 768px;
+    }
+
+    .banner {
+        max-width: 768px;
+    }
+
+    .banner__image {
+        width: 768px;
+        height: 480px;
+        object-fit: fill;
+    }
+    
+    .promo-image_position_top {
+        width: 100px;
+        height: 150px;
+        top: 40px;
+        right: 100px;
+    }
+    
+    .promo-image_position_left {
+        width: 100px;
+        height: 200px;
+        top: 200px;
+        right: 75px;
+    }
+
+    .books__menu {
+        width: 768px;
+        grid-template-columns: repeat(6, 100px);
+        grid-template-rows: repeat(3, 40px);
+        gap: 15px;
+    }
+
+    .books__menu-item {
+        font-size: 10px;
+    }
+
+    .books__cards {
+        width: 100%;
+        grid-template-columns: 424px;
+    }
+
+}
+
+@media  screen and (max-width: 796px) {
+    .header__container {
+        width: 320px;
+    }
+
+    .header__logo {
+        font-size: 12px;
+        margin-left: 5px;
+    }
+
+    .header__navigation {
+        display: none;
+    }
+
+    .header__link {
+        font-size: 8px;
+    }
+
+    .header__user-panel {
+        gap: 10px;
+        margin-right: 5px;
+    }
+
+    .banner {
+        max-width: 320px;
+    }
+
+    .banner__image {
+        width: 320px;
+        height: 200px;
+    }
+    
+    .promo-image_position_top {
+        display: none;
+    }
+    
+    .promo-image_position_left {
+        display: none;
+    }
+
+    .books {
+        margin-top: 30px;
+    }
+        
+    .books__menu {
+        width: 320px;
+        grid-template-columns: repeat(3, 90px);
+        grid-template-rows: repeat(6, 40px);
+        gap: 15px;
+    }
+
+    .books__menu-item {
+        font-size: 8px;
+    }
+
+    .books__menu-item:hover {
+        font-size: 12px;
+    }
+
+    .books__menu-item_type_selected {
+        color: #1C2A39;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .books__cards {
+        grid-template-columns: 300px;
+        grid-auto-rows: 150px;
+    }
+
+    .book__img {
+        width: 100px;
+    }
+
+    .book__info-container {
+        width: 150px;
+    }
+
+    .book__author {
+        font-size: 8px;
+        font-weight: 400;
+    }
+
+    .book__name {
+        font-size: 12px;
+    }
+
+    .book__review-container {
+        margin-bottom: 8px;
+    }
+
+    .book__review-count {
+        font-size: 8px;
+    }
+
+    .book__description {
+        height: 36px;
+        font-size: 8px;
+        margin-bottom: 10px;
+    }
+
+    .book__price {
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+
+    .book__buy-button {
+        height: 40px;
+    }
+
+    .book__more-button {
+        height: 40px;
+        margin: 30px auto;
+    }
+    
 }
