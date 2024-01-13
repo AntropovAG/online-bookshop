@@ -1,23 +1,6 @@
-import { requestBooks } from './src/API/API.js'
+import { requestBooks } from './src/API/API.js';
+import './src/components/banner.js'
 
-
-const banners = [
-    {
-        "src": "./src/images/banner_01.png",
-        "alt": "first banner"
-    },
-    {
-        "src": "./src/images/banner_02.png",
-        "alt": "second banner"
-    },
-    {
-        "src": "./src/images/banner_03.png",
-        "alt": "third banner"
-    }
-];
-
-const bannerImage = document.querySelector(".banner__image");
-const bannerNavigationButtons = document.querySelectorAll(".banner__radio-button");
 const container = document.querySelector(".books__cards")
 const loadMoreButton = document.querySelector(".book__more-button");
 const bookMenuButtons = document.querySelectorAll(".books__menu-button");
@@ -26,8 +9,6 @@ const firstBookMenuButton = document.querySelector(".books__menu-button");
 const cartItemsCount = document.querySelector(".header__items-count");
 
 
-let currentIndex = 0;
-let renderTimer = 5000;
 let currentApiRequest;
 let currentRequestIndex;
 let cartItems = 0;
@@ -60,35 +41,6 @@ function removeItemFromCart() {
     renderCart();
 }
 
-
-function renderIntervalBanner() {
-    if (currentIndex === banners.length - 1) {
-        renderBanner(banners, 0);
-    } else {
-        renderBanner(banners, currentIndex + 1);
-    }
-}
-
-let indervalId = setInterval(renderIntervalBanner, renderTimer);
-
-function renderBanner(array, newIndex) {
-    bannerNavigationButtons[currentIndex].classList.remove("banner__radio-button_type_selected")
-    bannerImage.src = array[newIndex].src;
-    bannerImage.alt = array[newIndex].alt;
-    bannerNavigationButtons[newIndex].classList.add("banner__radio-button_type_selected");
-    currentIndex = newIndex
-}
-
-renderBanner(banners, currentIndex);
-
-bannerNavigationButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        clearInterval(indervalId);
-        renderBanner(banners, Number(button.dataset.index));
-        indervalId = setInterval(renderIntervalBanner, renderTimer);
-    })
-})
-
 function fillRatingStars(book, ratingStars, reviewContainer) {
     if (book.volumeInfo.averageRating) {
         let ratingNumber = Number(book.volumeInfo.averageRating)
@@ -103,6 +55,29 @@ function fillRatingStars(book, ratingStars, reviewContainer) {
         }
     } else {
         reviewContainer.style.visibility = "hidden"
+    }
+}
+
+function removeBookFromArray(array, id) {
+    let boughtBookIndex = array.indexOf(id);
+    array.splice(boughtBookIndex, 1);
+    return array;
+}
+
+function updateBooksInCart(book, button) {
+    if(boughtBooks.includes(book.id)) {
+        removeBookFromArray(boughtBooks, book.id)
+        localStorage.setItem('boughtBooks', JSON.stringify(boughtBooks));
+        console.log("book deleted", boughtBooks)
+        removeItemFromCart();
+        button.classList.remove("book__buy-button_type_pressed");
+        button.textContent = "buy now";
+    } else {
+        boughtBooks.push(book.id)
+        localStorage.setItem('boughtBooks', JSON.stringify(boughtBooks));
+        addItemToCart();
+        button.classList.add("book__buy-button_type_pressed");
+        button.textContent = "in the cart";
     }
 }
 
@@ -148,36 +123,34 @@ function renderTemplate(booksInfo) {
         bookDescription.textContent = book.volumeInfo.description;
 
         if(book.saleInfo.retailPrice) {
-            console.log(book.saleInfo.retailPrice)
             saleInfo.textContent = book.saleInfo.retailPrice;
         } else {
             saleInfo.style.visibility = "hidden";
         }
 
-        function removeBookFromArray(array, id) {
-            let boughtBookIndex = array.indexOf(id);
-            array.splice(boughtBookIndex, 1);
-            return array;
-        }
+        // function removeBookFromArray(array, id) {
+        //     let boughtBookIndex = array.indexOf(id);
+        //     array.splice(boughtBookIndex, 1);
+        //     return array;
+        // }
 
         buyButton.addEventListener('click', () => {
 
-            if(boughtBooks.includes(book.id)) {
-                console.log("book already bought", book.id);
-                removeBookFromArray(boughtBooks, book.id)
-                localStorage.setItem('boughtBooks', JSON.stringify(boughtBooks));
-                console.log("book deleted", boughtBooks)
-                removeItemFromCart();
-                buyButton.classList.remove("book__buy-button_type_pressed");
-                buyButton.textContent = "buy now";
-            } else {
-                console.log("book not bought, adding!")
-                boughtBooks.push(book.id)
-                localStorage.setItem('boughtBooks', JSON.stringify(boughtBooks));
-                addItemToCart();
-                buyButton.classList.add("book__buy-button_type_pressed");
-                buyButton.textContent = "in the cart";
-            }
+            updateBooksInCart(book, buyButton)
+            // if(boughtBooks.includes(book.id)) {
+            //     removeBookFromArray(boughtBooks, book.id)
+            //     localStorage.setItem('boughtBooks', JSON.stringify(boughtBooks));
+            //     console.log("book deleted", boughtBooks)
+            //     removeItemFromCart();
+            //     buyButton.classList.remove("book__buy-button_type_pressed");
+            //     buyButton.textContent = "buy now";
+            // } else {
+            //     boughtBooks.push(book.id)
+            //     localStorage.setItem('boughtBooks', JSON.stringify(boughtBooks));
+            //     addItemToCart();
+            //     buyButton.classList.add("book__buy-button_type_pressed");
+            //     buyButton.textContent = "in the cart";
+            // }
 
             
         })
