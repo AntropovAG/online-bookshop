@@ -1,45 +1,19 @@
 import { requestBooks } from './src/API/API.js';
-import './src/components/banner.js'
+import './src/components/banner.js';
+import { addItemToCart, removeItemFromCart, isBookInCart } from './src/components/cart.js';
+
 
 const container = document.querySelector(".books__cards")
 const loadMoreButton = document.querySelector(".book__more-button");
 const bookMenuButtons = document.querySelectorAll(".books__menu-button");
 const bookMenuListItems = document.querySelectorAll(".books__menu-item");
 const firstBookMenuButton = document.querySelector(".books__menu-button");
-const cartItemsCount = document.querySelector(".header__items-count");
+
 
 
 let currentApiRequest;
 let currentRequestIndex;
-let cartItems = 0;
-const boughtBooks = localStorage.getItem("boughtBooks")?JSON.parse(localStorage.getItem("boughtBooks")):[];
 
-if (localStorage.getItem("cartItems")) {
-    cartItems = Number(localStorage.getItem("cartItems"));
-    renderCart();
-}
-
-function renderCart() {
-    if (cartItems > 0) {
-        cartItemsCount.textContent = cartItems;
-        console.log(cartItems)
-        cartItemsCount.style.display = "block";
-    } else {
-        cartItemsCount.style.display = "none";
-    }
-}
-
-function addItemToCart() {
-    cartItems += 1;
-    localStorage.setItem("cartItems", cartItems);
-    renderCart();
-}
-
-function removeItemFromCart() {
-    cartItems -= 1;
-    localStorage.setItem("cartItems", cartItems);
-    renderCart();
-}
 
 function fillRatingStars(book, ratingStars, reviewContainer) {
     if (book.volumeInfo.averageRating) {
@@ -58,24 +32,13 @@ function fillRatingStars(book, ratingStars, reviewContainer) {
     }
 }
 
-function removeBookFromArray(array, id) {
-    let boughtBookIndex = array.indexOf(id);
-    array.splice(boughtBookIndex, 1);
-    return array;
-}
-
-function updateBooksInCart(book, button) {
-    if(boughtBooks.includes(book.id)) {
-        removeBookFromArray(boughtBooks, book.id)
-        localStorage.setItem('boughtBooks', JSON.stringify(boughtBooks));
-        console.log("book deleted", boughtBooks)
-        removeItemFromCart();
+function toggleBookInCart(book, button) {
+    if(isBookInCart(book.id)) {
+        removeItemFromCart(book.id);
         button.classList.remove("book__buy-button_type_pressed");
         button.textContent = "buy now";
     } else {
-        boughtBooks.push(book.id)
-        localStorage.setItem('boughtBooks', JSON.stringify(boughtBooks));
-        addItemToCart();
+        addItemToCart(book.id);
         button.classList.add("book__buy-button_type_pressed");
         button.textContent = "in the cart";
     }
@@ -128,34 +91,13 @@ function renderTemplate(booksInfo) {
             saleInfo.style.visibility = "hidden";
         }
 
-        // function removeBookFromArray(array, id) {
-        //     let boughtBookIndex = array.indexOf(id);
-        //     array.splice(boughtBookIndex, 1);
-        //     return array;
-        // }
-
         buyButton.addEventListener('click', () => {
 
-            updateBooksInCart(book, buyButton)
-            // if(boughtBooks.includes(book.id)) {
-            //     removeBookFromArray(boughtBooks, book.id)
-            //     localStorage.setItem('boughtBooks', JSON.stringify(boughtBooks));
-            //     console.log("book deleted", boughtBooks)
-            //     removeItemFromCart();
-            //     buyButton.classList.remove("book__buy-button_type_pressed");
-            //     buyButton.textContent = "buy now";
-            // } else {
-            //     boughtBooks.push(book.id)
-            //     localStorage.setItem('boughtBooks', JSON.stringify(boughtBooks));
-            //     addItemToCart();
-            //     buyButton.classList.add("book__buy-button_type_pressed");
-            //     buyButton.textContent = "in the cart";
-            // }
-
+            toggleBookInCart(book, buyButton)
             
         })
 
-        if(boughtBooks.includes(book.id)) {
+        if(isBookInCart(book.id)) {
             buyButton.classList.add("book__buy-button_type_pressed");
             buyButton.textContent = "in the cart";
         }
@@ -193,7 +135,6 @@ bookMenuButtons.forEach((button) => {
             if(booksInfo.length === 6) {
                 loadMoreButton.style.display = "block";
             }
-            console.log(booksInfo);
             renderTemplate(booksInfo);
             currentApiRequest = button.dataset.type;
             currentRequestIndex = booksInfo.length;
@@ -204,9 +145,7 @@ bookMenuButtons.forEach((button) => {
 loadMoreButton.addEventListener("click", () => {
     console.log("before: ", currentRequestIndex)
     requestBooks(currentApiRequest, currentRequestIndex).then((res) => {
-        console.log(currentRequestIndex)
         let booksInfo = res.items;
-        console.log("More: ", booksInfo)
         if(booksInfo.length < 6) {
             loadMoreButton.style.display = "none";
         }
