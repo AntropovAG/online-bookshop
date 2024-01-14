@@ -1,4 +1,4 @@
-import { banners } from '../utils/constants.js'
+import { banners } from '../utils/constants.js';
 
 const bannerNavigationButtons = document.querySelectorAll(".banner__radio-button");
 const bannerImage = document.querySelector(".banner__image");
@@ -8,11 +8,11 @@ let indervalId = setInterval(renderIntervalBanner, renderTimer);
 
 
 function renderBanner(array, newIndex) {
-    bannerNavigationButtons[currentIndex].classList.remove("banner__radio-button_type_selected")
+    bannerNavigationButtons[currentIndex].classList.remove("banner__radio-button_type_selected");
     bannerImage.src = array[newIndex].src;
     bannerImage.alt = array[newIndex].alt;
     bannerNavigationButtons[newIndex].classList.add("banner__radio-button_type_selected");
-    currentIndex = newIndex
+    currentIndex = newIndex;
 }
 
 function renderIntervalBanner() {
@@ -30,5 +30,5 @@ bannerNavigationButtons.forEach((button) => {
         clearInterval(indervalId);
         renderBanner(banners, Number(button.dataset.index));
         indervalId = setInterval(renderIntervalBanner, renderTimer);
-    })
-})
+    });
+});

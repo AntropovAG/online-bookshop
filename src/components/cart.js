@@ -14,7 +14,7 @@ function renderCart() {
 
 export function addItemToCart(bookId) {
     if(!boughtBooks.includes(bookId)) {
-    boughtBooks.push(bookId)
+    boughtBooks.push(bookId);
     localStorage.setItem('boughtBooks', JSON.stringify(boughtBooks));
     renderCart();
     }
@@ -30,5 +30,5 @@ export function removeItemFromCart(bookId) {
 }
 
 export function isBookInCart(bookId){
-    return boughtBooks.includes(bookId)
+    return boughtBooks.includes(bookId);
 }

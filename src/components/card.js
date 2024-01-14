@@ -1,21 +1,21 @@
 import { addItemToCart, removeItemFromCart, isBookInCart } from './cart.js';
 
-export const container = document.querySelector(".books__cards")
+export const container = document.querySelector(".books__cards");
 
 function fillRatingStars(book, ratingStars, reviewContainer) {
     if (book.volumeInfo.averageRating) {
-        let ratingNumber = Number(book.volumeInfo.averageRating)
+        let ratingNumber = Number(book.volumeInfo.averageRating);
         for (let i = 0; i <= 4; i++) {
             if (ratingNumber >= i) {
                 ratingStars[i].querySelector("#starFill").setAttribute("offset", "100%");
             } else {
                 let x = (i - ratingNumber) * 100;
                 ratingStars[i].querySelector("#starFill").setAttribute("offset", `${x}%`);
-                break
+                break;
             }
         }
     } else {
-        reviewContainer.style.visibility = "hidden"
+        reviewContainer.style.visibility = "hidden";
     }
 }
 
@@ -50,25 +50,25 @@ export function renderTemplate(booksInfo) {
             let gradient = ratingStars[i].querySelector("#half_grad");
             let colorPath = ratingStars[i].querySelector("#color_path");
             gradient.setAttribute("id", `${book.id}${[i]}`);
-            colorPath.setAttribute("fill", `url(#${book.id}${[i]})`)
+            colorPath.setAttribute("fill", `url(#${book.id}${[i]})`);
         }
 
         if (book.volumeInfo.imageLinks) {
             bookImg.src = book.volumeInfo.imageLinks.thumbnail;
         } else {
-            bookImg.src = "./src/images/book_default.png"
+            bookImg.src = "./src/images/book_default.png";
         }
 
         bookAuthor.textContent = book.volumeInfo.authors.join(", ");
 
         bookName.textContent = book.volumeInfo.title;
         if (book.volumeInfo.ratingsCount) {
-            bookReviewCount.textContent = `${book.volumeInfo.ratingsCount} review(s)`
+            bookReviewCount.textContent = `${book.volumeInfo.ratingsCount} review(s)`;
         } else {
-            bookReviewCount.textContent = ""
+            bookReviewCount.textContent = "";
         }
 
-        fillRatingStars(book, ratingStars, reviewContainer)
+        fillRatingStars(book, ratingStars, reviewContainer);
 
         bookDescription.textContent = book.volumeInfo.description;
 
@@ -80,9 +80,9 @@ export function renderTemplate(booksInfo) {
 
         buyButton.addEventListener('click', () => {
 
-            toggleBookInCart(book, buyButton)
+            toggleBookInCart(book, buyButton);
             
-        })
+        });
 
         if(isBookInCart(book.id)) {
             buyButton.classList.add("book__buy-button_type_pressed");
@@ -91,5 +91,5 @@ export function renderTemplate(booksInfo) {
 
 
         container.append(card);
-    })
+    });
 }
