@@ -48,7 +48,6 @@ bookMenuButtons.forEach((button) => {
 })
 
 loadMoreButton.addEventListener("click", () => {
-    console.log("before: ", currentRequestIndex)
     requestBooks(currentApiRequest, currentRequestIndex).then((res) => {
         let booksInfo = res.items;
         if(booksInfo.length < 6) {
