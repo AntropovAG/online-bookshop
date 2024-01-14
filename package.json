@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "start:dev": "webpack-dev-server"
+    "run:dev": "webpack-dev-server"
   },
   "author": "Antropov Anton",
   "license": "ISC",
@@ -14,6 +14,7 @@
     "css-minimizer-webpack-plugin": "^5.0.1",
     "eslint": "^8.56.0",
     "eslint-webpack-plugin": "^4.0.1",
+    "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.7.7",
     "style-loader": "^3.3.4",
     "webpack": "^5.89.0",

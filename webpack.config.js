@@ -4,12 +4,17 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
+    mode: 'production',
     entry: path.resolve(__dirname, 'index.js'),
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'main.js'
     },
-    mode: 'production',
+    devServer: {
+        static: {
+            directory: path.join(__dirname, "build"),
+          },
+    },
         plugins: [
             new MiniCssExtractPlugin(), 
             new ESLintPlugin({fix: true})
